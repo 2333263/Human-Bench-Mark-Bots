@@ -112,11 +112,11 @@ def get_Locations(image,region,ax):
 
 def main():
     fig,ax=plt.subplots()
-    startTest=pyautogui.locateCenterOnScreen('Human BenchMark/ChimpTest/StartTest.png') #find location of start button 
+    startTest=pyautogui.locateCenterOnScreen('ChimpTest/StartTest.png') #find location of start button 
     if(startTest==None):
         print("Could not find the StartTest button")
         return()
-    region=pyautogui.locateOnScreen('Human BenchMark/ChimpTest/ChimpTest.png') #find location of test region
+    region=pyautogui.locateOnScreen('ChimpTest/ChimpTest.png') #find location of test region
     pyautogui.click(startTest) #click start button
     
     while(True): #repeat for every level you wish to complete
@@ -125,10 +125,10 @@ def main():
         locs=get_Locations(image,region,ax) #get locations of blocks
         for i in locs: #click on each block
             pyautogui.click(((i[1][0]+i[1][2])/2,(i[1][1]+i[1][3])/2))
-        done=pyautogui.locateCenterOnScreen('Human BenchMark/ChimpTest/DONE.png')
+        done=pyautogui.locateCenterOnScreen('ChimpTest/DONE.png')
         if(done!=None):
             break
-        continueLoc=pyautogui.locateCenterOnScreen('Human BenchMark/ChimpTest/continue.png') #find location of continue button
+        continueLoc=pyautogui.locateCenterOnScreen('ChimpTest/continue.png') #find location of continue button
         pyautogui.click(continueLoc) #click continue button
     
 if __name__=="__main__":

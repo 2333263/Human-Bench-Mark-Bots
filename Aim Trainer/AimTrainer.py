@@ -6,8 +6,8 @@ import mss
 
 
 def main(): 
-    StartPos=pyautogui.locateCenterOnScreen('Human BenchMark/Aim Trainer/target.png') #find location of start button
-    region=pyautogui.locateOnScreen('Human BenchMark/Aim Trainer/area.png') #find location of test region
+    StartPos=pyautogui.locateCenterOnScreen('Aim Trainer/target.png') #find location of start button
+    region=pyautogui.locateOnScreen('Aim Trainer/area.png') #find location of test region
     pyautogui.click(StartPos)  #click start button
     for _ in range(30):  #repeat for every target
         with mss.mss() as sct: #take screenshot
